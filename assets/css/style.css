@@ -1,0 +1,332 @@
+@charset "utf-8";
+
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+
+:root{
+    --fontRaleway: 'Raleway', sans-serif;
+    --fontAnton: 'Anton', sans-serif;
+}
+
+body{
+    background-color: #000;
+    min-height: 200vh;
+}
+
+/*Header*/
+
+.headerContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+
+    position: fixed;
+    width: 100%;
+    padding: 7px clamp(20px, 2vw + 5px, 40px);
+
+    background-color: #FFE0CE; 
+    border-bottom: 1px solid #000;
+
+    transition: .4s ease-in-out;
+    z-index: 97;
+}
+
+.headerContainer.fullTop {
+    background-color: transparent;
+    border: none;
+}
+
+.headerContainer .headerLogo a{
+    font-family: var(--fontAnton);
+    font-size: clamp(2em, 2vw + 1em, 3em);
+}
+
+.headerContainer.fullTop a{
+    color: white;
+}
+
+.headerContainer.fullTop img{
+    filter: invert(100%);
+}
+
+.headerLogo{
+    max-width: 150px;
+    width: 100%;
+}
+
+.headerLogo img{
+    width: 100%;
+    height: 100%;
+}
+
+.mainNavigation{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: clamp(15px, 2vw + 10px, 50px);
+}
+
+.headerNavigation{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.headerContainer .linkWrapper a{
+    font-family: var(--fontRaleway);
+    font-size: 1.2em;
+    font-weight: 500;
+    position: relative;
+}
+
+.headerContainer .linkWrapper a:after{
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    bottom: 0;
+    left: 50%;
+    background-color: black;
+    transition: .4s;
+}
+
+.headerContainer .linkWrapper a:hover:after{
+    left: 0;
+    width: 100%;
+}
+
+.headerContainer.fullTop .linkWrapper a:after{
+    background-color: white;
+}
+
+.headerSocialMedia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.headerSocialMedia a{
+    width: 24px;
+    height: 24px;
+}
+
+.headerSocialMedia a img{
+    width: 100%;
+    height: 100%;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+
+    width: 50px;
+    height: 24px;
+    position: relative;
+
+    cursor: pointer;
+}
+
+.hamburger .trace{
+    width: 100%;
+    height: 4px;
+    position: absolute;
+    background-color: black;
+    transition: .4s;
+}
+
+.hamburger .trace:nth-child(1){
+    top: 0;
+}
+
+.hamburger .trace:nth-child(2){
+    top: 12px;
+    left: 0;
+}
+
+.hamburger .trace:nth-child(3){
+    top: 24px;
+}
+
+.hamburger.active .trace:first-child{
+    transform: rotate(225deg);
+    top: 12px;
+}
+
+.hamburger.active .trace:nth-child(2){
+    width: 0;
+    opacity: 0;
+}
+
+.hamburger.active .trace:last-child{
+    transform: rotate(-225deg);
+    top: 12px;
+}
+
+/*Landing Page*/
+
+.landingPageContainer{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 20px;
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    padding: 20px;
+}
+
+.landingPageContainer:after{
+    content: '';
+    background-image: url("../image/barberImages/landing.jpg");
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    filter: blur(2px) brightness(50%);
+    z-index: -1;
+}
+
+.landingPageContainer h1{
+    max-width: 600px;
+    width: 100%;
+    font-family: var(--fontAnton);
+    font-size: clamp(1.5em, 5vw + 1em, 5em);
+    font-weight: 200;
+    letter-spacing: -0.001em;
+    line-height: 1.1em;
+    color: white;
+}
+
+.landingPageContainer a{
+    max-width: 400px;
+    width: 100%;
+    padding: 1em 2em;
+    
+    font-size: 1.2em;
+    font-weight: 500;
+    text-align: center;
+
+    border: 1px solid white;
+    border-radius: 2em;
+    
+    color: white;
+    transition: background-color .4s ease-in, color .3s;
+}
+
+.landingPageContainer a:hover{
+    background-color: white;
+    color: black;
+}
+
+@media screen and (max-width: 768px) {
+
+    .headerContainer{
+        padding: 10px 25px;
+    }
+
+    .headerContainer .headerLogo{
+        max-width: 115px;
+    }
+
+    .hamburger{
+        display: flex;
+        z-index: 99;
+    }
+
+    .mainNavigation{
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: flex-start;
+
+        visibility: hidden;
+        opacity: 0.2;
+        
+        position: fixed;
+        right: 0;
+        top: 0;
+
+        width: 0;
+        height: 100vh;
+        padding: 100px 30px 30px 30px;
+        overflow: hidden auto;
+        transform: translateX(80px);
+
+        background-color: #FFE0CE;
+        border-left: 1px solid black;
+        transition: .5s;
+        z-index: 98;
+    }
+
+    .headerContainer.fullTop a:not(.logo){
+        color: black;
+    }
+    
+    .headerContainer.fullTop .headerSocialMedia img{
+        filter: none;
+    }
+
+    .headerContainer.fullTop .hamburger:not(.active) .trace{
+        background-color: white;
+    }
+
+    .hamburger.active ~ .mainNavigation{
+        visibility: visible;
+        opacity: 1;
+        width: 45%;
+        transform: translateX(0);
+    }
+
+    .headerNavigation{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+
+        font-size: 1.3em;
+    }
+
+    .headerSocialMedia{
+        justify-content: flex-end;
+        width: 100%;
+    }
+
+    /*Landing Page*/
+    
+    .landingPageContainer{
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+    }
+
+    .landingPageContainer h1{
+        max-width: 100%;
+        font-size: clamp(2em, 6.5vw + 1em, 4em);
+    }
+
+    .landingPageContainer a{
+        max-width: 100%;
+    }
+
+}
+
+@media screen and (max-width: 550px){
+    .hamburger.active ~ .mainNavigation{
+        width: 65%;
+    }
+
+    /*Landing Page */
+    .landingPageContainer a{
+        font-size: 1em;
+        padding: 1em 1.5em;
+    }
+}

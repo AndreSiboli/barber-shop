@@ -1,0 +1,33 @@
+@charset "utf-8";
+
+html{
+    scroll-behavior: smooth;
+}
+
+*{ 
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style: none;
+    color: #000; /*bb641e*/
+    font-family: Arial, sans-serif;
+}
+
+::-webkit-scrollbar{
+    width: 8px;
+    background-color: black;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: #ffe0cebb;
+}
+
+::-webkit-scrollbar-button{
+    background-color: #FFE0CE;
+    height: 10px;
+}
+
+::-webkit-scrollbar-track{
+    color: #FFE0CE;
+}

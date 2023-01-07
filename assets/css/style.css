@@ -9,9 +9,16 @@
 }
 
 body{
-    background-color: #000;
+    background-color: #222;
 }
 
+h2{
+    font: 200 clamp(1.5em, 1.5vw + 0.9em, 2em) var(--fontAnton);
+}
+
+h3{
+    font: 600 1.1em var(--fontRaleway);
+}
 /*Header*/
 
 .headerContainer{
@@ -226,6 +233,46 @@ body{
     color: black;
 }
 
+/*Abilities*/
+
+.abilitiesSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    min-height: 80vh;
+    width: 100%;
+    background-color: white;
+    padding: 40px 20px;
+}
+
+.abilitiesWrapper{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 250px);
+    grid-template-rows: repeat(2, 1fr);
+    justify-content: space-around;
+    gap: 20px;
+    max-width: 900px;
+    width: 100%;
+}
+
+.abilitiesWrapper .abilities{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    padding: 20px;
+    border-radius: 1em;
+}
+
+.abilities img{
+    width: 75px;
+    height: 75px;
+}
+
 @media screen and (max-width: 768px) {
 
     .headerContainer{
@@ -314,6 +361,12 @@ body{
 
     .landingPageContainer a{
         max-width: 100%;
+    }
+
+    /*Abilities*/
+
+    .abilitiesWrapper{
+        grid-template-columns: repeat(auto-fit, 200px);
     }
 
 }

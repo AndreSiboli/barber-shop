@@ -7,6 +7,10 @@ function toggleHamburger(e){
     else document.body.style.overflowY = 'auto'
 }
 
+window.addEventListener('resize', ()=>{
+    if(window.innerWidth > 768 && hamburger.classList.contains('active')) toggleHamburger()
+})
+
 hamburger.addEventListener('click', (e)=>{
     toggleHamburger(e)
 })

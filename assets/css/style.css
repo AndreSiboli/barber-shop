@@ -13,11 +13,11 @@ body{
 }
 
 h2{
-    font: 200 clamp(1.5em, 1.5vw + 0.9em, 2em) var(--fontAnton);
+    font: 200 clamp(1.8em, 1.5vw + 0.9em, 2.5em) var(--fontAnton);
 }
 
 h3{
-    font: 600 1.2em var(--fontRaleway);
+    font: 600 1.25em var(--fontRaleway);
 }
 
 h4{
@@ -36,7 +36,7 @@ h4{
     width: 100%;
     padding: 7px clamp(20px, 2vw + 5px, 40px);
 
-    background-color: #FFE0CE; 
+    background-color: #ffbb90; 
     border-bottom: 1px solid #000;
 
     transition: .4s ease-in-out;
@@ -271,6 +271,7 @@ h4{
 
     padding: 20px;
     border-radius: 1em;
+    
 }
 
 .abilities img{
@@ -449,7 +450,7 @@ h4{
     /*Abilities*/
 
     .abilitiesWrapper{
-        grid-template-columns: repeat(auto-fit, 200px);
+        grid-template-columns: repeat(auto-fit, 225px);
     }
 
     /*price*/
@@ -472,5 +473,11 @@ h4{
     .landingPageContainer a{
         font-size: 1em;
         padding: 1em 1.5em;
+    }
+}
+
+@media screen and (max-width: 425px){
+    .hamburger.active ~ .mainNavigation{
+        width: 80%;
     }
 }

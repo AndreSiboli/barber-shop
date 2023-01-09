@@ -9,7 +9,7 @@
 }
 
 body{
-    background-color: #222;
+    background-color: #fff;
 }
 
 h2{
@@ -17,8 +17,13 @@ h2{
 }
 
 h3{
-    font: 600 1.1em var(--fontRaleway);
+    font: 600 1.2em var(--fontRaleway);
 }
+
+h4{
+    font: 600 1.2em var(--fontRaleway);
+}
+
 /*Header*/
 
 .headerContainer{
@@ -225,7 +230,7 @@ h3{
     border-radius: 2em;
     
     color: white;
-    transition: background-color .4s ease-in, color .3s;
+    transition: background-color .4s ease-in, color .5s ease-in;
 }
 
 .landingPageContainer a:hover{
@@ -271,6 +276,84 @@ h3{
 .abilities img{
     width: 75px;
     height: 75px;
+}
+
+/*Price*/
+
+.priceContainer{
+    display: flex;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    width: 100%;
+    min-height: 90vh;
+    background-color: #222;
+    padding: 40px 20px;
+}
+
+.priceContainer p, 
+.priceContainer h2,
+.priceContainer h3,
+.priceContainer h4,
+.priceContainer span{
+    color: white;
+}
+
+.servicesContainer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 75px;
+    max-width: 1200px;
+    width: 100%;
+}
+
+.servicesContainer .priceWrapper > h3{
+    background-color: #ffbb90;
+    color: black;
+    padding: 10px;
+    border-radius: 0.2em;
+}
+
+.priceContainer .priceWrapper{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    max-width: 300px;
+    gap: 30px;
+    height: fit-content;
+}
+
+.priceContainer .priceTable{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    
+    width: 100%;
+    padding: 0 5px;
+}
+
+.priceContainer .priceTable:not(:last-child){
+    padding-bottom: 20px;
+    border-bottom: 1px solid #444;
+}
+
+.priceContainer .priceTable p{
+    color: #DEDEDE;
+    font-size: 0.92em;
+}
+
+.priceTable .priceType{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.priceTable .priceType span{
+    color: #ffbb90;
+    font-size: 1.3em;
 }
 
 @media screen and (max-width: 768px) {
@@ -369,6 +452,15 @@ h3{
         grid-template-columns: repeat(auto-fit, 200px);
     }
 
+    /*price*/
+
+    .priceContainer{
+        padding: 40px 30px;
+    }
+
+    .servicesContainer .priceWrapper{
+        max-width: 800px;
+    }
 }
 
 @media screen and (max-width: 550px){
